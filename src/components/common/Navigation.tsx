@@ -19,6 +19,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between">
           <Link
             href="/"
+            prefetch={false}
             className="flex items-center gap-2"
           >
             <XIcon />
@@ -31,6 +32,7 @@ export default function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
+                prefetch={false}
                 className={`hover:text-primary text-sm transition-colors ${
                   pathname === item.href
                     ? 'text-primary font-semibold'
@@ -65,6 +67,7 @@ export default function Navigation() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  prefetch={false}
                   className={`hover:text-primary text-sm transition-colors ${
                     pathname === item.href
                       ? 'text-primary font-semibold'
