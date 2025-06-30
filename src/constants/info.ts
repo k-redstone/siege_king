@@ -133,6 +133,33 @@ export const SCREAM_INFO: IMatchInfo[] = [
   },
 ]
 
+export const TEAM_INFO = [
+  {
+    teamName: '핑맨팀',
+    teamImage: 'test',
+    leader: '핑맨',
+    member: ['핑맨'],
+  },
+  {
+    teamName: '빅헤드팀',
+    teamImage: 'test',
+    leader: '빅헤드',
+    member: ['빅헤드'],
+  },
+  {
+    teamName: '실프팀',
+    teamImage: 'test',
+    leader: '실프',
+    member: ['실프'],
+  },
+  {
+    teamName: '뱅팀',
+    teamImage: 'test',
+    leader: '뱅',
+    member: ['뱅'],
+  },
+]
+
 export const STREAMER_INFO: IStreamerInfo[] = [
   {
     hashId: '0dcec72cd1033032a77dfced6c0c91f8',
