@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 
 import Footer from '@/components/common/Footer'
 import Navigation from '@/components/common/Navigation'
+import { getMetadata } from '@/constants/metadata'
 import './globals.css'
 
 const geistSans = Geist({
@@ -16,9 +17,8 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 })
 
-export const metadata: Metadata = {
-  title: '2025 SEGEKING',
-  description: '핑맨과 함께하는 레인보우 식스 시즈 X: 시즈킹',
+export const generateMetadata = async (): Promise<Metadata> => {
+  return getMetadata()
 }
 
 export default function RootLayout({
