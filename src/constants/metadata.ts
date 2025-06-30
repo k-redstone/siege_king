@@ -23,7 +23,7 @@ export const META = {
   ],
   url: 'https://r6.saebaldong.kr',
   naverVerification: '6fc81db361f091c43bd0e96750c8ecd93cd5badf',
-  ogImage: '/opengraph-image.PNG',
+  ogImage: '/opengraph-image.png',
 } as const
 
 export const getMetadata = (metadataProps?: IGenerateMetadataProps) => {
