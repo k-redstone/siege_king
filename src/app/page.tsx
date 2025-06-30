@@ -7,7 +7,9 @@ export default function MainHome() {
         <h1 className="text-primary">home!</h1>
       </main>
 
-      <XIcon />
+      <div className="flex flex-col">
+        <XIcon />
+      </div>
     </div>
   )
 }

@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 
 import { Geist, Geist_Mono } from 'next/font/google'
+
+import Footer from '@/components/common/Footer'
+import Navigation from '@/components/common/Navigation'
 import './globals.css'
 
 const geistSans = Geist({
@@ -24,11 +27,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="ko">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="flex min-h-screen flex-col">
+          <Navigation />
+          <div className="flex-1 pt-20">{children}</div>
+          <Footer />
+        </div>
       </body>
     </html>
   )
