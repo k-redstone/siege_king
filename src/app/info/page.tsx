@@ -66,7 +66,7 @@ export default function InfoPage() {
                   <li>• 7포인트 선승제</li>
                   <li>• 6라운드마다 공수 교대</li>
                   <li>• 밴픽 시스템 적용</li>
-                  <li>• 연장시 9포인트 선승제 (불확실...)</li>
+                  <li>• 연장시 8포인트 선승제 (불확실...)</li>
                 </ul>
               </CardContent>
             </Card>
