@@ -172,6 +172,7 @@ export default function TeamsPage() {
                                   className="h-full w-full object-cover"
                                   width={64}
                                   height={64}
+                                  unoptimized
                                 />
                               </div>
                               <h4 className="mb-1 text-sm font-semibold">

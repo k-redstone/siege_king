@@ -19,6 +19,7 @@ export default function StreamerCard({ data }: IStreamerCardProps) {
         alt={data.nickname}
         width={120}
         height={120}
+        unoptimized
       />
       <div className="relative">
         <div className="bg-primary absolute left-1/2 h-0.5 w-10 -translate-x-1/2 md:h-1 md:w-15"></div>
