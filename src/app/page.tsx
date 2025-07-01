@@ -11,6 +11,7 @@ import {
   SCREAM_INFO,
   STREAMER_INFO,
 } from '@/constants/info'
+import { GAPageView } from '@/hooks/useGAPageViesw'
 
 export default function MainHome() {
   const groupA = STREAMER_INFO.filter((streamer) => streamer.tier === 'A')
@@ -287,6 +288,7 @@ export default function MainHome() {
           </div>
         </div>
       </section>
+      <GAPageView />
     </div>
   )
 }

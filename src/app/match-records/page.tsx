@@ -5,6 +5,7 @@ import { useState } from 'react'
 import DetailMatchInfo from '@/components/match/DetailMatchInfo'
 import { Button } from '@/components/ui/button'
 import { DETAIL_MATCH_INFO } from '@/constants/matchDetail'
+import { GAPageView } from '@/hooks/useGAPageViesw'
 
 export default function MatchRecordsPage() {
   const [selectedFilter, setSelectedFilter] = useState('전체')
@@ -64,6 +65,7 @@ export default function MatchRecordsPage() {
           </div>
         </section>
       </div>
+      <GAPageView />
     </div>
   )
 }

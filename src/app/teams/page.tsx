@@ -6,6 +6,8 @@ import StreamerCard from '@/components/info/StreamerCard'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { STREAMER_INFO, TEAM_INFO } from '@/constants/info'
+import { GAPageView } from '@/hooks/useGAPageViesw'
+
 export default function TeamsPage() {
   const groupA = STREAMER_INFO.filter((streamer) => streamer.tier === 'A')
   const groupB = STREAMER_INFO.filter((streamer) => streamer.tier === 'B')
@@ -209,6 +211,7 @@ export default function TeamsPage() {
           </div>
         </section>
       </div>
+      <GAPageView />
     </div>
   )
 }

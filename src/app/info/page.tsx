@@ -2,6 +2,7 @@ import { Trophy, Calendar, Target, Users, Award, Gamepad2 } from 'lucide-react'
 
 import { InfoCard } from '@/components/info/InfoCard'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { GAPageView } from '@/hooks/useGAPageViesw'
 
 export default function InfoPage() {
   return (
@@ -200,6 +201,7 @@ export default function InfoPage() {
           </Card>
         </section>
       </div>
+      <GAPageView />
     </div>
   )
 }

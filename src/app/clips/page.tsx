@@ -1,5 +1,6 @@
 import ClipPreviewItem from '@/components/clip/ClipPreviewItem'
 import { CLIPS_LIST } from '@/constants/clips'
+import { GAPageView } from '@/hooks/useGAPageViesw'
 
 export default function ClipsPage() {
   return (
@@ -31,14 +32,7 @@ export default function ClipsPage() {
           ))}
         </div>
       </div>
-      {/* <iframe
-          width="800"
-          height="450"
-          title="CHZZK Player"
-          src="https://chzzk.naver.com/embed/clip/MxV7oqyoaH"
-          allow="autoplay; clipboard-write; web-share"
-          allowFullScreen
-        /> */}
+      <GAPageView />
     </div>
   )
 }
