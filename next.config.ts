@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         pathname: '/**',
         hostname: 'nng-phinf.pstatic.net',
       },
+      {
+        protocol: 'https',
+        pathname: '/**',
+        hostname: 'video-phinf.pstatic.net',
+      },
     ],
   },
 }
