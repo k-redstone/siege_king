@@ -3,7 +3,7 @@ import { IBaseInfo, IMatchInfo, IStreamerInfo } from '@/types/info'
 export const HOME_INFO: IBaseInfo[] = [
   { title: '참가 스트리머 및 팀', label: '20명 / 4팀' },
   { title: '총 상금', label: '₩1,000만 원' },
-  { title: '대회 기간', label: '7.5 ~ 7.11 (7일)' },
+  { title: '대회 기간', label: '7/5일 ~ 7/12일' },
   { title: '팀 선정 방식', label: '팀장 경매제' },
 ] as const
 
