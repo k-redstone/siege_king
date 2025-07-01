@@ -19,3 +19,17 @@ export interface IStreamerInfo {
   profileUrl: string
   tier: TStreamerTier
 }
+
+export interface IDetailMatchInfo {
+  id: number
+  date: string
+  time: string
+  stage: string
+  teamA: string
+  teamB: string
+  scoreA: number
+  scoreB: number
+  status: TMatchStatus
+  maps: readonly string[]
+  isScrim: boolean
+}
