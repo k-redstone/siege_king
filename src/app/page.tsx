@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import { InfoCard } from '@/components/info/InfoCard'
 import StreamerCard from '@/components/info/StreamerCard'
 import ShortMatchInfo from '@/components/match/ShortMatchInfo'
@@ -30,12 +32,14 @@ export default function MainHome() {
             개선된 그래픽으로 업그레이드 된 레인보우 식스 시즈 X로 펼쳐지는
             시즈킹이 시작됩니다!
           </p>
-          <Button
-            size="default"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground cursor-pointer"
-          >
-            대회 소개 보기
-          </Button>
+          <Link href={'/info'}>
+            <Button
+              size="default"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground cursor-pointer"
+            >
+              대회 소개 보기
+            </Button>
+          </Link>
         </div>
       </section>
 
