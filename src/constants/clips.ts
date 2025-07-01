@@ -3344,4 +3344,42 @@ export const CLIPS_LIST = [
     blindType: null,
     privateUserBlock: false,
   },
+  {
+    clipUID: 'l4SikHXBSl',
+    videoId: '2BFD6274698AB93F5CADA138C997517B84EE',
+    clipTitle: '1',
+    ownerChannelId: '0dcec72cd1033032a77dfced6c0c91f8',
+    ownerChannel: null,
+    thumbnailImageUrl:
+      'https://video-phinf.pstatic.net/20250702_160/1751383231600EdK10_JPEG/VeITbTJRFg_03.jpg',
+    categoryType: 'GAME',
+    clipCategory: 'Rainbow_Six_Siege',
+    duration: 62,
+    adult: false,
+    createdDate: '2025-07-02 00:19:42',
+    recId:
+      '{"seedClipUID":"l4SikHXBSl","fromType":"CHANNEL","listType":"CHANNEL","orderType":"RECENT","filterType":"WITHIN_SEVEN_DAYS","channelId":"0dcec72cd1033032a77dfced6c0c91f8"}',
+    readCount: 20,
+    blindType: null,
+    privateUserBlock: false,
+  },
+  {
+    clipUID: 'iB9gIM7787',
+    videoId: '376BF852451B7B5B843C0B83C82C19EF5A64',
+    clipTitle: '오승철 드립욕심 ㅋㅋ',
+    ownerChannelId: '0dcec72cd1033032a77dfced6c0c91f8',
+    ownerChannel: null,
+    thumbnailImageUrl:
+      'https://video-phinf.pstatic.net/20250702_97/17513820033386hm5v_JPEG/gVbooXegn3_03.jpg',
+    categoryType: 'GAME',
+    clipCategory: 'Rainbow_Six_Siege',
+    duration: 23,
+    adult: false,
+    createdDate: '2025-07-01 23:59:43',
+    recId:
+      '{"seedClipUID":"iB9gIM7787","fromType":"CHANNEL","listType":"CHANNEL","orderType":"RECENT","filterType":"WITHIN_SEVEN_DAYS","channelId":"0dcec72cd1033032a77dfced6c0c91f8"}',
+    readCount: 37,
+    blindType: null,
+    privateUserBlock: false,
+  },
 ] as const
