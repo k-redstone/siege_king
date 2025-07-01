@@ -112,6 +112,7 @@ export default function TeamsPage() {
           </div>
         </section>
 
+        {/* Team */}
         <section className="px-4 py-8">
           <div className="mx-auto max-w-6xl">
             <div className="mb-8 text-center">
@@ -181,18 +182,20 @@ export default function TeamsPage() {
                                   {playerData.tier} 티어
                                 </span>
                               </div>
-                              <Button
-                                variant="outline"
-                                size="sm"
-                                className="w-full text-xs"
+                              <Link
+                                target="_blank"
+                                className="cursor-pointer"
+                                href={`https://chzzk.naver.com/live/${playerData.hashId}`}
+                                prefetch={false}
                               >
-                                <Link
-                                  target="_blank"
-                                  href={`https://chzzk.naver.com/live/${playerData.hashId}`}
+                                <Button
+                                  variant="outline"
+                                  size="sm"
+                                  className="w-full cursor-pointer text-xs"
                                 >
                                   라이브 보러가기
-                                </Link>
-                              </Button>
+                                </Button>
+                              </Link>
                             </div>
                           </CardContent>
                         </Card>
