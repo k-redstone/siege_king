@@ -1,3 +1,5 @@
+'use client'
+
 import { Play, Clock } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -13,7 +15,8 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog'
 import { STREAMER_INFO } from '@/constants/info'
-import { getRelativeTime, toMinuteSecond } from '@/lib/utils'
+import useRelativeTime from '@/hooks/useRelativeTime'
+import { toMinuteSecond } from '@/lib/utils'
 import { IClip } from '@/types/clip'
 
 interface IClipPreviewItemProps {
@@ -21,6 +24,7 @@ interface IClipPreviewItemProps {
 }
 
 export default function ClipPreviewItem({ data }: IClipPreviewItemProps) {
+  const relativeTime = useRelativeTime(data.createdDate)
   const streamer =
     STREAMER_INFO.find((streamer) => streamer.hashId === data.ownerChannelId) ||
     null
@@ -79,7 +83,7 @@ export default function ClipPreviewItem({ data }: IClipPreviewItemProps) {
                   </p>
                 </div>
                 <span className="text-muted-foreground text-xs">
-                  {getRelativeTime(data.createdDate)}
+                  {relativeTime}
                 </span>
               </div>
             )}
@@ -101,9 +105,7 @@ export default function ClipPreviewItem({ data }: IClipPreviewItemProps) {
         <DialogHeader>
           <DialogTitle className="flex flex-col gap-y-4 pt-2">
             <p>{data.clipTitle}</p>
-            <p className="text-muted-foreground text-xs">
-              {getRelativeTime(data.createdDate)}
-            </p>
+            <p className="text-muted-foreground text-xs">{relativeTime}</p>
           </DialogTitle>
           <div
             className="relative overflow-hidden"
