@@ -1,4 +1,4 @@
-// import Link from 'next/link'
+import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
@@ -60,15 +60,15 @@ export default function DetailMatchInfo({ match }: IDetailMatchInfoProps) {
                 </span>
               ))}
             </div>
-            {/* <Link href={`/match-details/${match.id}`}> */}
-            <Button
-              variant="outline"
-              size="sm"
-              className="mt-3"
-            >
-              상세 보기
-            </Button>
-            {/* </Link> */}
+            <Link href={`/match-details/${match.id}`}>
+              <Button
+                variant="outline"
+                size="sm"
+                className="mt-3 cursor-pointer"
+              >
+                상세 보기
+              </Button>
+            </Link>
           </div>
         </div>
       </CardContent>

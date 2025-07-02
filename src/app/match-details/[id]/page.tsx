@@ -1,17 +1,28 @@
 import { ArrowLeft, Clock } from 'lucide-react'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 
 import MatchOverviewCard from '@/components/match/matchDetail/MatchOverviewCard'
 import RoundResultTabPanel from '@/components/match/matchDetail/RoundResultTabPanel'
 import { Button } from '@/components/ui/button'
-import { DETAIL_MATCH_INFO } from '@/constants/matchDetail'
+import { IDetailMatchInfo } from '@/types/info'
 
-export default function MatchDetailsPage() {
-  const matchData = DETAIL_MATCH_INFO.find((match) => match.id === 11)
+type Params = Promise<{ id: string }>
 
-  if (!matchData) {
-    return
+export default async function MatchDetailsPage(props: { params: Params }) {
+  const { id: matchId } = await props.params
+  const url = process.env.NEXT_PUBLIC_MATCH_JSON_URL
+
+  if (!url) throw new Error('환경변수(MATCH_JSON_URL)가 설정되지 않았습니다.')
+
+  const res = await fetch(`${url}/${matchId}.json`, {
+    next: { revalidate: 10 },
+  })
+  if (!res.ok) {
+    return notFound()
   }
+
+  const matchData: IDetailMatchInfo = await res.json()
 
   return (
     <div className="bg-background text-foreground py-10">

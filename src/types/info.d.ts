@@ -25,7 +25,6 @@ export interface ISetPlayerStats {
   kills: number
   deaths: number
   assists: number
-  rating: number
   operators: readonly string[]
 }
 
