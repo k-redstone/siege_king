@@ -1,5 +1,6 @@
 'use client'
 
+import { Target } from 'lucide-react'
 import { useState } from 'react'
 
 import RoundByRoundResult from '@/components/match/matchDetail/RoundByRoundResult'
@@ -34,7 +35,51 @@ export default function RoundResultTabPanel({
         ))}
       </div>
 
+      <div className="flex gap-x-4 text-2xl font-bold">
+        <h2 className="flex items-center gap-2">
+          <Target className="h-5 w-5" />
+          세트 결과
+        </h2>
+      </div>
+      <div className="flex items-center justify-between">
+        <div className="flex-1 text-center">
+          <h2 className="mb-2 text-xl font-bold">
+            {matchData[selectedIndex].teamA.name}
+          </h2>
+          <div className="text-2xl font-bold text-blue-400">
+            {matchData[selectedIndex].teamA.score}
+          </div>
+        </div>
+
+        <div className="text-center">
+          <div className="text-muted-foreground mb-2 text-xl">VS</div>
+        </div>
+
+        <div className="flex-1 text-center">
+          <h2 className="mb-2 text-xl font-bold">
+            {matchData[selectedIndex].teamB.name}
+          </h2>
+          <div className="text-2xl font-bold text-orange-400">
+            {matchData[selectedIndex].teamB.score}
+          </div>
+        </div>
+      </div>
+
+      <div className="flex gap-x-4 text-2xl font-bold">
+        <h2 className="flex items-center gap-2">
+          <Target className="h-5 w-5" />
+          라운드
+        </h2>
+      </div>
+
       <RoundByRoundResult setData={matchData[selectedIndex].roundsWin} />
+
+      <div className="flex gap-x-4 text-2xl font-bold">
+        <h2 className="flex items-center gap-2">
+          <Target className="h-5 w-5" />
+          스코어보드
+        </h2>
+      </div>
       <TeamScoreBoard
         type="teamA"
         setData={matchData[selectedIndex].teamA}

@@ -1,4 +1,4 @@
-import { Target, Locate } from 'lucide-react'
+import { Locate } from 'lucide-react'
 
 interface IRoundByRoundResultProps {
   setData: string[]
@@ -9,13 +9,6 @@ export default function RoundByRoundResult({
 }: IRoundByRoundResultProps) {
   return (
     <div className="space-y-4">
-      <div className="text-2xl font-bold">
-        <h2 className="flex items-center gap-2">
-          <Target className="h-5 w-5" />
-          라운드별 결과
-        </h2>
-      </div>
-
       <div>
         {/* Round Grid */}
 
