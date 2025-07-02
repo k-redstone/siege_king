@@ -20,6 +20,29 @@ export interface IStreamerInfo {
   tier: TStreamerTier
 }
 
+export interface ISetPlayerStats {
+  name: string
+  kills: number
+  deaths: number
+  assists: number
+  rating: number
+  operators: readonly string[]
+}
+
+export interface ISetTeamResult {
+  name: string
+  score: number
+  players: ISetPlayerStats[]
+}
+
+export interface IMatchSetResult {
+  setNumber: number
+  map: string
+  roundsWin: string[]
+  teamA: ISetTeamResult
+  teamB: ISetTeamResult
+}
+
 export interface IDetailMatchInfo {
   id: number
   date: string
@@ -32,4 +55,5 @@ export interface IDetailMatchInfo {
   status: TMatchStatus
   maps: readonly string[]
   isScrim: boolean
+  sets?: IMatchSetResult[]
 }

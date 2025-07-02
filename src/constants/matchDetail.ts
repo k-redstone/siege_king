@@ -1,4 +1,6 @@
-export const DETAIL_MATCH_INFO = [
+import { IDetailMatchInfo } from '@/types/info'
+
+export const DETAIL_MATCH_INFO: IDetailMatchInfo[] = [
   {
     id: 1,
     date: '2025-07-11',
@@ -63,6 +65,137 @@ export const DETAIL_MATCH_INFO = [
     status: 'scheduled',
     maps: ['미정', '미정', '미정'],
     isScrim: true,
+    sets: [
+      {
+        setNumber: 1,
+        map: 'asdf',
+        roundsWin: [
+          'teamB',
+          'teamA',
+          'teamA',
+          'teamA',
+          'teamB',
+          'teamA',
+          'teamB',
+          'teamB',
+          'teamA',
+          'teamB',
+          'teamA',
+          'teamB',
+          'teamB',
+          'teamB',
+        ],
+        teamA: {
+          name: '팀 A',
+          score: 6,
+          players: [
+            {
+              name: '실프',
+              kills: 12,
+              deaths: 8,
+              assists: 3,
+              rating: 1.35,
+              operators: [
+                'ash',
+                'jager',
+                'ash',
+                'jager',
+                'twitch',
+                'wamai',
+                'ash',
+                'jager',
+                'ash',
+                'jager',
+                'twitch',
+                'wamai',
+                'jager',
+                'twitch',
+                'wamai',
+              ],
+            },
+            {
+              name: '이로나묭 치카',
+              kills: 12,
+              deaths: 8,
+              assists: 3,
+              rating: 1.35,
+              operators: ['ash', 'jager', 'ash', 'jager', 'twitch', 'wamai'],
+            },
+          ],
+        },
+        teamB: {
+          name: '팀 B',
+          score: 8,
+          players: [
+            {
+              name: '빅헤드',
+              kills: 12,
+              deaths: 8,
+              assists: 3,
+              rating: 1.35,
+              operators: ['ash', 'jager', 'ash', 'jager', 'twitch', 'wamai'],
+            },
+            {
+              name: '금사향',
+              kills: 12,
+              deaths: 8,
+              assists: 3,
+              rating: 1.35,
+              operators: ['ash', 'jager', 'ash', 'jager', 'twitch', 'wamai'],
+            },
+          ],
+        },
+      },
+      {
+        setNumber: 2,
+        map: 'asdf',
+        roundsWin: ['teamB', 'teamA', 'teamA', 'teamA', 'teamB'],
+        teamA: {
+          name: '팀 A',
+          score: 6,
+          players: [
+            {
+              name: '김스트림',
+              kills: 12,
+              deaths: 8,
+              assists: 3,
+              rating: 1.35,
+              operators: ['ash', 'jager', 'ash', 'jager', 'twitch', 'wamai'],
+            },
+            {
+              name: '김스트림',
+              kills: 12,
+              deaths: 8,
+              assists: 3,
+              rating: 1.35,
+              operators: ['ash', 'jager', 'ash', 'jager', 'twitch', 'wamai'],
+            },
+          ],
+        },
+        teamB: {
+          name: '팀 B',
+          score: 8,
+          players: [
+            {
+              name: '김스트림',
+              kills: 12,
+              deaths: 8,
+              assists: 3,
+              rating: 1.35,
+              operators: ['ash', 'jager', 'ash', 'jager', 'twitch', 'wamai'],
+            },
+            {
+              name: '김스트림',
+              kills: 12,
+              deaths: 8,
+              assists: 3,
+              rating: 1.35,
+              operators: ['ash', 'jager', 'ash', 'jager', 'twitch', 'wamai'],
+            },
+          ],
+        },
+      },
+    ],
   },
   {
     id: 12,
