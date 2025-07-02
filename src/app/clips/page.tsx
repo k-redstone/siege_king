@@ -1,8 +1,15 @@
 import ClipPreviewItem from '@/components/clip/ClipPreviewItem'
-import { CLIPS_LIST } from '@/constants/clips'
 import { GAPageView } from '@/hooks/useGAPageViesw'
+import { IClip } from '@/types/clip'
 
-export default function ClipsPage() {
+export default async function ClipsPage() {
+  const url = process.env.NEXT_PUBLIC_CLIPS_JSON_URL
+
+  if (!url) throw new Error('환경변수(CLIPS_JSON_URL)가 설정되지 않았습니다.')
+
+  const res = await fetch(url, { next: { revalidate: 10 } })
+  const data: IClip[] = await res.json()
+
   return (
     <div className="bg-background text-foreground py-10">
       <div className="mx-auto max-w-6xl px-4">
@@ -22,14 +29,14 @@ export default function ClipsPage() {
         </div>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {CLIPS_LIST.toSorted((a, b) =>
-            b.createdDate.localeCompare(a.createdDate),
-          ).map((clip) => (
-            <ClipPreviewItem
-              key={clip.clipUID}
-              data={clip}
-            />
-          ))}
+          {data
+            .toSorted((a, b) => b.createdDate.localeCompare(a.createdDate))
+            .map((clip) => (
+              <ClipPreviewItem
+                key={clip.clipUID}
+                data={clip}
+              />
+            ))}
         </div>
       </div>
       <GAPageView />
