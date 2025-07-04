@@ -85,7 +85,10 @@ export default function InfoPage() {
                   <li>• 팀장 오퍼레이터 제한</li>
                   <ul className="pl-4">
                     <li>- 1배율만 사용 가능</li>
-                    <li>- 수비때 캐릭 제한은 없지만 앵커만 가능(로밍 금지)</li>
+                    <li>
+                      - 수비 때 1분간 사이트에서 벗어나기 금지. 이후, 자유 이동
+                      가능
+                    </li>
                     <li>- 3속 대원 사용금지</li>
                   </ul>
                   <li>• 경기 맵</li>
