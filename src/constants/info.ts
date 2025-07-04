@@ -160,6 +160,25 @@ export const TEAM_INFO = [
   },
 ]
 
+export const AUCTION_INFO = [
+  {
+    tier: '',
+    name: '',
+    result: '',
+    team: '',
+    color: '',
+  },
+]
+
+export const AUCTION_FAIL_INFO = [
+  {
+    tier: 'C',
+    name: '',
+    result: ' (자동 낙찰)',
+    color: 'bg-muted/20 text-muted-foreground',
+  },
+]
+
 export const STREAMER_INFO: IStreamerInfo[] = [
   {
     hashId: '0dcec72cd1033032a77dfced6c0c91f8',

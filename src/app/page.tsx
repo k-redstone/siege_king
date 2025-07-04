@@ -10,6 +10,8 @@ import {
   TOURNAMENT_INFO,
   SCREAM_INFO,
   STREAMER_INFO,
+  // AUCTION_INFO,
+  // AUCTION_FAIL_INFO,
 } from '@/constants/info'
 import { GAPageView } from '@/hooks/useGAPageViesw'
 
@@ -288,6 +290,145 @@ export default function MainHome() {
           </div>
         </div>
       </section>
+
+      {/* Auction Results Board */}
+      <section className="bg-muted/20 px-4 py-8">
+        <div className="mx-auto max-w-4xl">
+          <div className="mb-8 text-center">
+            <h2 className="mb-2 text-2xl font-bold">팀장 경매 결과판</h2>
+            <p className="text-muted-foreground">
+              경매 진행 순서대로 낙찰 결과
+            </p>
+          </div>
+
+          <div className="mb-8 flex justify-center gap-x-5">
+            <span
+              className={`rounded-full bg-purple-500/20 px-3 py-1 text-sm font-semibold text-purple-400`}
+            >
+              핑맨 : 1000P
+            </span>
+            <span
+              className={`rounded-full bg-orange-500/20 px-3 py-1 text-sm font-semibold text-orange-400`}
+            >
+              빅헤드 : 1000P
+            </span>
+            <span
+              className={`rounded-full bg-blue-500/20 px-3 py-1 text-sm font-semibold text-blue-400`}
+            >
+              실프 : 1050P
+            </span>
+            <span
+              className={`bg-primary/20 text-primary rounded-full px-3 py-1 text-sm font-semibold`}
+            >
+              뱅 : 1200P
+            </span>
+          </div>
+
+          {/* Main Auction Results Table */}
+          <Card className="bg-card border-border mb-8">
+            <CardContent className="p-0">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-border bg-muted/30 border-b">
+                      <th className="px-4 py-4 text-left font-semibold">
+                        그룹
+                      </th>
+                      <th className="px-4 py-4 text-left font-semibold">
+                        선수명
+                      </th>
+                      <th className="px-4 py-4 text-left font-semibold">
+                        경매결과
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {/* {AUCTION_INFO.map((player, index) => (
+                      <tr
+                        key={index}
+                        className="border-border/50 hover:bg-muted/10 border-b"
+                      >
+                        <td className="px-4 py-3">
+                          <span
+                            className={`inline-block h-8 w-8 rounded-full text-center text-sm leading-8 font-bold`}
+                          >
+                            {player.tier}
+                          </span>
+                        </td>
+                        <td className="px-4 py-3 font-medium">{player.name}</td>
+                        <td className="px-4 py-3">
+                          <span
+                            className={`rounded-full px-3 py-1 text-sm font-semibold ${player.color}`}
+                          >
+                            {player.result}
+                          </span>
+                        </td>
+                      </tr>
+                    ))} */}
+                  </tbody>
+                </table>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Failed Auctions */}
+          <Card className="bg-muted/10 border-border mb-8">
+            <CardContent className="p-4">
+              <h3 className="text-muted-foreground mb-4 text-center text-lg font-semibold">
+                유찰 경매
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-border/50 border-b">
+                      <th className="text-muted-foreground px-4 py-3 text-left font-semibold">
+                        그룹
+                      </th>
+                      <th className="text-muted-foreground px-4 py-3 text-left font-semibold">
+                        선수명
+                      </th>
+                      <th className="text-muted-foreground px-4 py-3 text-left font-semibold">
+                        경매결과
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {/* {AUCTION_FAIL_INFO.map((player, index) => (
+                      <tr
+                        key={index}
+                        className="border-border/30 border-b"
+                      >
+                        <td className="px-4 py-3">
+                          <span
+                            className={`inline-block h-8 w-8 rounded-full text-center text-sm leading-8 font-bold ${
+                              player.tier === 'C'
+                                ? 'bg-muted/30 text-muted-foreground'
+                                : 'bg-muted/30 text-muted-foreground'
+                            }`}
+                          >
+                            {player.tier}
+                          </span>
+                        </td>
+                        <td className="text-muted-foreground px-4 py-3 font-medium">
+                          {player.name}
+                        </td>
+                        <td className="px-4 py-3">
+                          <span
+                            className={`rounded-full px-3 py-1 text-sm font-semibold ${player.color}`}
+                          >
+                            {player.result}
+                          </span>
+                        </td>
+                      </tr>
+                    ))} */}
+                  </tbody>
+                </table>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       <GAPageView />
     </div>
   )
