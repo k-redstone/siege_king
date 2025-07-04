@@ -1,21 +1,19 @@
 'use client'
 
-import { useState } from 'react'
-
 import DetailMatchInfo from '@/components/match/DetailMatchInfo'
 import { Button } from '@/components/ui/button'
 import { DETAIL_MATCH_INFO } from '@/constants/matchDetail'
 import { GAPageView } from '@/hooks/useGAPageViesw'
+import { useTabQuery, MATCH_RECORDS_TABS } from '@/hooks/useTabQuery'
 
 export default function MatchRecordsPage() {
-  const [selectedFilter, setSelectedFilter] = useState('전체')
-  const filters = ['전체', '공식경기', '스크림']
+  const { tab, setTab } = useTabQuery()
 
   const filteredMatches =
-    selectedFilter === '전체'
+    tab === 0
       ? DETAIL_MATCH_INFO
       : DETAIL_MATCH_INFO.filter((match) =>
-          selectedFilter === '공식경기' ? !match.isScrim : match.isScrim,
+          tab === 1 ? !match.isScrim : match.isScrim,
         )
 
   return (
@@ -40,14 +38,14 @@ export default function MatchRecordsPage() {
 
         {/* Filter Tabs */}
         <div className="mb-6 flex justify-center gap-2">
-          {filters.map((filter) => (
+          {MATCH_RECORDS_TABS.map((matchTab) => (
             <Button
               className="cursor-pointer"
-              key={filter}
-              variant={selectedFilter === filter ? 'default' : 'outline'}
-              onClick={() => setSelectedFilter(filter)}
+              key={matchTab.label}
+              variant={tab === matchTab.id ? 'default' : 'outline'}
+              onClick={() => setTab(matchTab.id)}
             >
-              {filter}
+              {matchTab.label}
             </Button>
           ))}
         </div>
