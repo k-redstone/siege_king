@@ -310,7 +310,7 @@ export default function MainHome() {
             <span
               className={`rounded-full bg-orange-500/20 px-3 py-1 text-sm font-semibold text-orange-400`}
             >
-              빅헤드 : 1000P
+              빅헤드 : 950P
             </span>
             <span
               className={`rounded-full bg-blue-500/20 px-3 py-1 text-sm font-semibold text-blue-400`}

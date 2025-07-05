@@ -90,6 +90,7 @@ export default function InfoPage() {
                       가능
                     </li>
                     <li>- 3속 대원 사용금지</li>
+                    <li>- 배율 금지</li>
                   </ul>
                   <li>• 경기 맵</li>
                   <ul className="pl-4">
