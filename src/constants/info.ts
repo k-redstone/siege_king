@@ -61,10 +61,127 @@ export const TEAM_INFO = [
   },
 ]
 
+// 핑맨
+// bg-purple-500/20 text-purple-400
+
+// 빅헤드
+// bg-orange-500/20 text-orange-400
+
+// 실프
+// bg-blue-500/20  text-blue-400
+
+// 뱅
+// bg-primary/20 text-primary
+
 export const AUCTION_INFO = [
   {
-    tier: '',
-    name: '',
+    tier: 'B',
+    name: '댕균',
+    result: '',
+    team: '',
+    color: '',
+  },
+  {
+    tier: 'C',
+    name: '미도미도 마요',
+    result: '',
+    team: '',
+    color: '',
+  },
+  {
+    tier: 'D',
+    name: '담유이',
+    result: '',
+    team: '',
+    color: '',
+  },
+  {
+    tier: 'D',
+    name: '디디디용',
+    result: '',
+    team: '',
+    color: '',
+  },
+  {
+    tier: 'B',
+    name: '금사향',
+    result: '',
+    team: '',
+    color: '',
+  },
+  {
+    tier: 'E',
+    name: '엘리',
+    result: '',
+    team: '',
+    color: '',
+  },
+  {
+    tier: 'D',
+    name: '이로나묭 치카',
+    result: '',
+    team: '',
+    color: '',
+  },
+  {
+    tier: 'C',
+    name: '아구이뽀',
+    result: '',
+    team: '',
+    color: '',
+  },
+  {
+    tier: 'D',
+    name: '백곰파',
+    result: '',
+    team: '',
+    color: '',
+  },
+  {
+    tier: 'B',
+    name: '너불',
+    result: '',
+    team: '',
+    color: '',
+  },
+  {
+    tier: 'C',
+    name: '임나은',
+    result: '',
+    team: '',
+    color: '',
+  },
+  {
+    tier: 'C',
+    name: '냐미',
+    result: '',
+    team: '',
+    color: '',
+  },
+  {
+    tier: 'B',
+    name: '푸린',
+    result: '',
+    team: '',
+    color: '',
+  },
+  {
+    tier: 'E',
+    name: '멋사',
+    result: '',
+    team: '',
+    color: '',
+  },
+  {
+    tier: 'E',
+    name: '채현찌',
+    result: '',
+    team: '',
+    color: '',
+  },
+  {
+    tier: 'E',
+    name: '하네',
     result: '',
     team: '',
     color: '',

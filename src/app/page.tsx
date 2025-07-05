@@ -9,7 +9,7 @@ import {
   HOME_INFO,
   TOURNAMENT_INFO,
   STREAMER_INFO,
-  // AUCTION_INFO,
+  AUCTION_INFO,
   // AUCTION_FAIL_INFO,
 } from '@/constants/info'
 import { GAPageView } from '@/hooks/useGAPageViesw'
@@ -293,14 +293,14 @@ export default async function MainHome() {
                     </tr>
                   </thead>
                   <tbody>
-                    {/* {AUCTION_INFO.map((player, index) => (
+                    {AUCTION_INFO.map((player, index) => (
                       <tr
                         key={index}
                         className="border-border/50 hover:bg-muted/10 border-b"
                       >
                         <td className="px-4 py-3">
                           <span
-                            className={`inline-block h-8 w-8 rounded-full text-center text-sm leading-8 font-bold`}
+                            className={`text-primary inline-block h-8 w-8 rounded-full text-center text-sm leading-8 font-bold`}
                           >
                             {player.tier}
                           </span>
@@ -314,7 +314,7 @@ export default async function MainHome() {
                           </span>
                         </td>
                       </tr>
-                    ))} */}
+                    ))}
                   </tbody>
                 </table>
               </div>
