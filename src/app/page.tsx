@@ -171,12 +171,9 @@ export default async function MainHome() {
             <Card className="bg-card border-border">
               <CardContent className="p-6">
                 <div className="mb-4 flex items-center justify-between">
-                  <h3 className="text-lg font-semibold">다가오는 일정</h3>
-                  {/* <span className="bg-primary/20 text-primary animate-pulse rounded-full px-3 py-1 text-xs font-semibold">
+                  <h3 className="text-lg font-semibold">현재 진행 중</h3>
+                  <span className="bg-primary/20 text-primary animate-pulse rounded-full px-3 py-1 text-xs font-semibold">
                     LIVE
-                  </span> */}
-                  <span className="rounded-full bg-blue-500/20 px-3 py-1 text-xs font-semibold text-blue-400">
-                    예정
                   </span>
                 </div>
                 <div className="text-center">
