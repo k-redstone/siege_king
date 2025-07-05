@@ -10,7 +10,7 @@ import {
   TOURNAMENT_INFO,
   STREAMER_INFO,
   AUCTION_INFO,
-  // AUCTION_FAIL_INFO,
+  AUCTION_FAIL_INFO,
 } from '@/constants/info'
 import { GAPageView } from '@/hooks/useGAPageViesw'
 import { IMatchInfo } from '@/types/info'
@@ -343,7 +343,7 @@ export default async function MainHome() {
                     </tr>
                   </thead>
                   <tbody>
-                    {/* {AUCTION_FAIL_INFO.map((player, index) => (
+                    {AUCTION_FAIL_INFO.map((player, index) => (
                       <tr
                         key={index}
                         className="border-border/30 border-b"
@@ -370,7 +370,7 @@ export default async function MainHome() {
                           </span>
                         </td>
                       </tr>
-                    ))} */}
+                    ))}
                   </tbody>
                 </table>
               </div>
