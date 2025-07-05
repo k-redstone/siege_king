@@ -8,14 +8,22 @@ import { Card, CardContent } from '@/components/ui/card'
 import {
   HOME_INFO,
   TOURNAMENT_INFO,
-  SCREAM_INFO,
   STREAMER_INFO,
   // AUCTION_INFO,
   // AUCTION_FAIL_INFO,
 } from '@/constants/info'
 import { GAPageView } from '@/hooks/useGAPageViesw'
+import { IMatchInfo } from '@/types/info'
 
-export default function MainHome() {
+export default async function MainHome() {
+  const url = process.env.NEXT_PUBLIC_SCREAM_INFO_JSON_URL
+
+  if (!url)
+    throw new Error('환경변수(SCREAM_INFO_JSON_URL)가 설정되지 않았습니다.')
+
+  const res = await fetch(url, { next: { revalidate: 10 } })
+  const screamData: IMatchInfo[] = await res.json()
+
   const groupA = STREAMER_INFO.filter((streamer) => streamer.tier === 'A')
   const groupB = STREAMER_INFO.filter((streamer) => streamer.tier === 'B')
   const groupC = STREAMER_INFO.filter((streamer) => streamer.tier === 'C')
@@ -158,53 +166,15 @@ export default function MainHome() {
           <h2 className="mb-6 text-center text-2xl font-bold">
             공식 경기 상황판
           </h2>
-          <div className="flex flex-col gap-6">
-            {/* Current/Next Match */}
-            <div className="grid gap-6 md:grid-cols-2">
-              {/* Current */}
-              {/* <Card className="bg-card border-border">
-                <CardContent className="p-6">
-                  <div className="mb-4 flex items-center justify-between">
-                    <h3 className="text-lg font-semibold">현재 진행 중</h3>
-                    <span className="bg-primary/20 text-primary animate-pulse rounded-full px-3 py-1 text-xs font-semibold">
-                      LIVE
-                    </span>
-                  </div>
-                  <div className="text-center">
-                    <div className="mb-4 flex items-center justify-center gap-6">
-                      <div className="text-center">
-                        <div className="text-lg font-semibold">팀 이름 A</div>
-                        <div className="text-primary text-3xl font-bold">
-                          A팀 스코어
-                        </div>
-                      </div>
-                      <div className="text-muted-foreground text-xl">VS</div>
-                      <div className="text-center">
-                        <div className="text-lg font-semibold">팀 이름 B</div>
-                        <div className="text-primary text-3xl font-bold">
-                          B팀 스코어
-                        </div>
-                      </div>
-                    </div>
-                    <div className="text-muted-foreground text-sm">
-                      결승전 - 맵: Villa
-                    </div>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="border-primary/50 text-primary hover:bg-primary/10 mt-3 bg-transparent"
-                    >
-                      실시간 시청
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card> */}
 
-              {/* Next */}
-              {/* <Card className="bg-card border-border">
+          <div className="mb-8 grid gap-6 md:grid-cols-2">
+            <Card className="bg-card border-border">
               <CardContent className="p-6">
                 <div className="mb-4 flex items-center justify-between">
-                  <h3 className="text-lg font-semibold">다음 경기</h3>
+                  <h3 className="text-lg font-semibold">다가오는 일정</h3>
+                  {/* <span className="bg-primary/20 text-primary animate-pulse rounded-full px-3 py-1 text-xs font-semibold">
+                    LIVE
+                  </span> */}
                   <span className="rounded-full bg-blue-500/20 px-3 py-1 text-xs font-semibold text-blue-400">
                     예정
                   </span>
@@ -212,48 +182,31 @@ export default function MainHome() {
                 <div className="text-center">
                   <div className="mb-4 flex items-center justify-center gap-6">
                     <div className="text-center">
-                      <div className="text-lg font-semibold">Team A</div>
-                      <div className="text-muted-foreground text-2xl font-bold">
-                        -
-                      </div>
-                    </div>
-                    <div className="text-muted-foreground text-xl">VS</div>
-                    <div className="text-center">
-                      <div className="text-lg font-semibold">Team B</div>
-                      <div className="text-muted-foreground text-2xl font-bold">
-                        -
+                      <div className="text-lg font-semibold">7/5 21:00</div>
+                      <div className="text-primary text-3xl font-bold">
+                        경매 방송
                       </div>
                     </div>
                   </div>
-                  <div className="text-muted-foreground mb-2 text-sm">
-                    4강 1경기
-                  </div>
-                  <div className="text-muted-foreground text-xs">
-                    7월 11일 20:00
-                  </div>
-                </div>
-              </CardContent>
-            </Card> */}
-              {/* <Card className="bg-card border-border">
-              <CardContent className="p-6">
-                <div className="mb-4 flex items-center justify-between">
-                  <h3 className="text-lg font-semibold">다음 경기</h3>
-                  <span className="rounded-full bg-blue-500/20 px-3 py-1 text-xs font-semibold text-blue-400">
-                    예정
-                  </span>
-                </div>
-                <div className="text-center">
-                  <div className="text-primary mb-2 text-3xl font-semibold">
-                    팀 경매
-                  </div>
-                  <div className="text-muted-foreground text-xs">
-                    7월 05일 21:00
-                  </div>
-                </div>
-              </CardContent>
-            </Card> */}
-            </div>
 
+                  <Link
+                    href={`https://chzzk.naver.com/live/0dcec72cd1033032a77dfced6c0c91f8`}
+                    target="_blank"
+                  >
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="border-primary/50 text-primary hover:bg-primary/10 mt-3 cursor-pointer bg-transparent"
+                    >
+                      실시간 시청
+                    </Button>
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="flex flex-col gap-6">
             {/* Tournament Bracket Preview */}
             <Card className="bg-card border-border">
               <CardContent className="p-6">
@@ -278,7 +231,7 @@ export default function MainHome() {
                   <h3 className="text-lg font-semibold">스크림 현황</h3>
                 </div>
                 <div className="grid gap-4 md:grid-cols-4">
-                  {SCREAM_INFO.map((match) => (
+                  {screamData.map((match) => (
                     <ShortMatchInfo
                       key={match.title}
                       data={match}
