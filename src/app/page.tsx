@@ -10,7 +10,6 @@ import {
   TOURNAMENT_INFO,
   STREAMER_INFO,
   AUCTION_INFO,
-  AUCTION_FAIL_INFO,
 } from '@/constants/info'
 import { GAPageView } from '@/hooks/useGAPageViesw'
 import { IMatchInfo } from '@/types/info'
@@ -306,62 +305,6 @@ export default async function MainHome() {
                           </span>
                         </td>
                         <td className="px-4 py-3 font-medium">{player.name}</td>
-                        <td className="px-4 py-3">
-                          <span
-                            className={`rounded-full px-3 py-1 text-sm font-semibold ${player.color}`}
-                          >
-                            {player.result}
-                          </span>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Failed Auctions */}
-          <Card className="bg-muted/10 border-border mb-8">
-            <CardContent className="p-4">
-              <h3 className="text-muted-foreground mb-4 text-center text-lg font-semibold">
-                유찰 경매
-              </h3>
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead>
-                    <tr className="border-border/50 border-b">
-                      <th className="text-muted-foreground px-4 py-3 text-left font-semibold">
-                        그룹
-                      </th>
-                      <th className="text-muted-foreground px-4 py-3 text-left font-semibold">
-                        선수명
-                      </th>
-                      <th className="text-muted-foreground px-4 py-3 text-left font-semibold">
-                        경매결과
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {AUCTION_FAIL_INFO.map((player, index) => (
-                      <tr
-                        key={index}
-                        className="border-border/30 border-b"
-                      >
-                        <td className="px-4 py-3">
-                          <span
-                            className={`inline-block h-8 w-8 rounded-full text-center text-sm leading-8 font-bold ${
-                              player.tier === 'C'
-                                ? 'bg-muted/30 text-muted-foreground'
-                                : 'bg-muted/30 text-muted-foreground'
-                            }`}
-                          >
-                            {player.tier}
-                          </span>
-                        </td>
-                        <td className="text-muted-foreground px-4 py-3 font-medium">
-                          {player.name}
-                        </td>
                         <td className="px-4 py-3">
                           <span
                             className={`rounded-full px-3 py-1 text-sm font-semibold ${player.color}`}

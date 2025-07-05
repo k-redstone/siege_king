@@ -10,13 +10,13 @@ export const HOME_INFO: IBaseInfo[] = [
 export const TOURNAMENT_INFO: IMatchInfo[] = [
   {
     title: '4강 1경기',
-    label: '예정',
+    label: '빅헤드 vs 핑맨',
     sub: '7/11 20:00',
     status: 'scheduled',
   },
   {
     title: '4강 2경기',
-    label: '예정',
+    label: '실프 vs 뱅',
     sub: '7/11 20:00',
     status: 'scheduled',
   },
@@ -84,9 +84,9 @@ export const AUCTION_INFO = [
   {
     tier: 'C',
     name: '미도미도 마요',
-    result: '유찰',
-    team: '',
-    color: '',
+    result: '핑맨 (자동낙찰)',
+    team: '핑맨팀',
+    color: 'bg-purple-500/20 text-purple-400',
   },
   {
     tier: 'D',
@@ -140,9 +140,9 @@ export const AUCTION_INFO = [
   {
     tier: 'B',
     name: '너불',
-    result: '유찰',
-    team: '',
-    color: '',
+    result: '핑맨 (자동낙찰)',
+    team: '핑맨팀',
+    color: 'bg-purple-500/20 text-purple-400',
   },
   {
     tier: 'C',
