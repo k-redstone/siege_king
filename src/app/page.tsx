@@ -166,42 +166,6 @@ export default async function MainHome() {
             공식 경기 상황판
           </h2>
 
-          <div className="mb-8 grid gap-6 md:grid-cols-2">
-            <Card className="bg-card border-border">
-              <CardContent className="p-6">
-                <div className="mb-4 flex items-center justify-between">
-                  <h3 className="text-lg font-semibold">현재 진행 중</h3>
-                  <span className="bg-primary/20 text-primary animate-pulse rounded-full px-3 py-1 text-xs font-semibold">
-                    LIVE
-                  </span>
-                </div>
-                <div className="text-center">
-                  <div className="mb-4 flex items-center justify-center gap-6">
-                    <div className="text-center">
-                      <div className="text-lg font-semibold">7/5 21:00</div>
-                      <div className="text-primary text-3xl font-bold">
-                        경매 방송
-                      </div>
-                    </div>
-                  </div>
-
-                  <Link
-                    href={`https://chzzk.naver.com/live/0dcec72cd1033032a77dfced6c0c91f8`}
-                    target="_blank"
-                  >
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="border-primary/50 text-primary hover:bg-primary/10 mt-3 cursor-pointer bg-transparent"
-                    >
-                      실시간 시청
-                    </Button>
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
           <div className="flex flex-col gap-6">
             {/* Tournament Bracket Preview */}
             <Card className="bg-card border-border">

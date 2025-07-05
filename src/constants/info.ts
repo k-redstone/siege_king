@@ -61,18 +61,6 @@ export const TEAM_INFO = [
   },
 ]
 
-// 핑맨
-// bg-purple-500/20 text-purple-400
-
-// 빅헤드
-// bg-orange-500/20 text-orange-400
-
-// 실프
-// bg-blue-500/20  text-blue-400
-
-// 뱅
-// bg-primary/20 text-primary
-
 export const AUCTION_INFO = [
   {
     tier: 'B',
@@ -185,21 +173,6 @@ export const AUCTION_INFO = [
     result: '빅헤드 (자동낙찰)',
     team: '빅헤드팀',
     color: 'bg-orange-500/20 text-orange-400',
-  },
-]
-
-export const AUCTION_FAIL_INFO = [
-  {
-    tier: 'C',
-    name: '미도미도 마요',
-    result: '핑맨팀 (자동 낙찰)',
-    color: 'bg-muted/20 text-muted-foreground',
-  },
-  {
-    tier: 'B',
-    name: '너불',
-    result: '핑맨팀 (자동 낙찰)',
-    color: 'bg-muted/20 text-muted-foreground',
   },
 ]
 
