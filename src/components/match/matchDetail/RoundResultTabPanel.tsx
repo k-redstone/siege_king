@@ -38,7 +38,10 @@ export default function RoundResultTabPanel({
       <div className="flex gap-x-4 text-2xl font-bold">
         <h2 className="flex items-center gap-2">
           <Target className="h-5 w-5" />
-          세트 결과
+          세트 결과{' '}
+          <span className="text-primary">
+            Map: {matchData[selectedIndex].map}
+          </span>
         </h2>
       </div>
       <div className="flex items-center justify-between">
