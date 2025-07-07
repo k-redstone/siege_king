@@ -1,19 +1,61 @@
 'use client'
 
+import { useEffect, useState } from 'react'
+
 import DetailMatchInfo from '@/components/match/DetailMatchInfo'
 import { Button } from '@/components/ui/button'
-import { DETAIL_MATCH_INFO } from '@/constants/matchDetail'
 import { useTabQuery, MATCH_RECORDS_TABS } from '@/hooks/useTabQuery'
+import { IDetailMatchInfo } from '@/types/info'
+
+async function fetchMatchInfo(): Promise<IDetailMatchInfo[]> {
+  const url = process.env.NEXT_PUBLIC_MATCH_LIST_JSON_URL
+  if (!url)
+    throw new Error('환경변수(MATCH_LIST_JSON_URL)가 설정되지 않았습니다.')
+
+  const res = await fetch(url)
+  if (!res.ok) throw new Error('데이터를 가져오는데 실패했습니다.')
+
+  return res.json()
+}
 
 export default function MatchReocrdsClient() {
   const { tab, setTab } = useTabQuery()
+  const [detailMatchInfo, setDetailMatchInfo] = useState<IDetailMatchInfo[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    let isMounted = true
+
+    async function fetchData() {
+      setLoading(true)
+      setError(null)
+      try {
+        const data = await fetchMatchInfo()
+        if (isMounted) setDetailMatchInfo(data)
+      } catch (e) {
+        if (isMounted) setError((e as Error).message)
+      } finally {
+        if (isMounted) setLoading(false)
+      }
+    }
+
+    fetchData()
+    return () => {
+      isMounted = false
+    }
+  }, [])
 
   const filteredMatches =
     tab === 0
-      ? DETAIL_MATCH_INFO
-      : DETAIL_MATCH_INFO.filter((match) =>
+      ? detailMatchInfo
+      : detailMatchInfo.filter((match) =>
           tab === 1 ? !match.isScrim : match.isScrim,
         )
+
+  if (loading)
+    return <div className="py-5 text-center text-3xl font-bold">로딩 중...</div>
+  if (error) return <div>오류: {error}</div>
 
   return (
     <div className="bg-background text-foreground py-10">
