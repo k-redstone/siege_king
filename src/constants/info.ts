@@ -17,7 +17,7 @@ export const TOURNAMENT_INFO: IMatchInfo[] = [
   {
     title: '4강 2경기',
     label: '실프 vs 뱅',
-    sub: '7/11 20:00',
+    sub: '7/11 1경기 이후 진행',
     status: 'scheduled',
   },
   {
@@ -29,7 +29,7 @@ export const TOURNAMENT_INFO: IMatchInfo[] = [
   {
     title: '결승전',
     label: '예정',
-    sub: '7/12 20:00',
+    sub: '7/12 3/4위전 이후 진행',
     status: 'scheduled',
   },
 ]
