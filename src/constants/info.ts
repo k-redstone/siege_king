@@ -17,18 +17,18 @@ export const TOURNAMENT_INFO: IMatchInfo[] = [
   {
     title: '4강 2경기',
     label: '실프 vs 뱅',
-    sub: '7/11 1경기 이후 진행',
-    status: 'live',
+    sub: '1 : 2',
+    status: 'done',
   },
   {
     title: '3/4위전',
-    label: '예정',
+    label: '핑맹 vs 실프',
     sub: '7/12 20:00',
     status: 'scheduled',
   },
   {
     title: '결승전',
-    label: '예정',
+    label: '빅헤드 vs 뱅',
     sub: '7/12 3/4위전 이후 진행',
     status: 'scheduled',
   },
