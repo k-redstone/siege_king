@@ -12,7 +12,7 @@ export const TOURNAMENT_INFO: IMatchInfo[] = [
     title: '4강 1경기',
     label: '빅헤드 vs 핑맨',
     sub: '7/11 20:00',
-    status: 'scheduled',
+    status: 'live',
   },
   {
     title: '4강 2경기',
