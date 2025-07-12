@@ -22,7 +22,7 @@ export const TOURNAMENT_INFO: IMatchInfo[] = [
   },
   {
     title: '3/4위전',
-    label: '핑맹 vs 실프',
+    label: '핑맨 vs 실프',
     sub: '1 : 2',
     status: 'done',
   },
