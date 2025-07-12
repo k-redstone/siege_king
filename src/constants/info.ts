@@ -29,8 +29,8 @@ export const TOURNAMENT_INFO: IMatchInfo[] = [
   {
     title: '결승전',
     label: '빅헤드 vs 뱅',
-    sub: '7/12 3/4위전 이후 진행',
-    status: 'live',
+    sub: '1 : 2',
+    status: 'done',
   },
 ]
 
