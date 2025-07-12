@@ -23,14 +23,14 @@ export const TOURNAMENT_INFO: IMatchInfo[] = [
   {
     title: '3/4위전',
     label: '핑맹 vs 실프',
-    sub: '7/12 20:00',
-    status: 'live',
+    sub: '1 : 2',
+    status: 'done',
   },
   {
     title: '결승전',
     label: '빅헤드 vs 뱅',
     sub: '7/12 3/4위전 이후 진행',
-    status: 'scheduled',
+    status: 'live',
   },
 ]
 
